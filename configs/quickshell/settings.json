@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "bar": {
+      "fontSize": 12,
+      "monochromeTrayIcons": true,
+      "trayIconSize": 16
+    },
+    "currentTheme": "default",
+    "execCommands": {
+      "files": "nemo",
+      "terminal": "kitty"
+    },
+    "militaryTimeClockFormat": true,
+    "setWallpaperToThemeWallpaper": true,
+    "systemDetauls": {
+      "cpu": "kitty",
+      "gpu": "kitty",
+      "osName": "kitty",
+      "osVersion": "kitty",
+      "ram": "kitty"
+    },
+    "systemProfileImageSource": "/home/username/Pictures/profile_picture.png",
+    "version": "0.1"
+  }
+}
