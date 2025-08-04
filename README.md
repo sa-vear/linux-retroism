@@ -1,6 +1,6 @@
 <div align="center">
 
-# Linux Retroism
+# <img src="https://media3.giphy.com/media/l4FGr7tMjH3ajuwy4/giphy.gif" width="4%"> Linux Retroism <img src="https://media3.giphy.com/media/l4FGr7tMjH3ajuwy4/giphy.gif" width="4%">
 
 </div>
 
@@ -14,9 +14,11 @@
 
 <div align="center">
 
-▐ **Linux Retroism is a Linux-rice based on the 1980-1990's user-interface aesthetic** ▌
+▐▐ **Linux Retroism is a Linux-rice based on the 1980-1990's user-interface aesthetic** ▌▌
 
 </div>
+
+<br><br>
 
 ### 🛈 Features:
 
@@ -24,6 +26,8 @@
 - Fully quickshell-based front-end (taskbar, app launcher, settings menu, etc)
 - Theme support & Built-in theme switcher
 - Icon theme & GTK theme
+
+<br>
 
 ### ✓ Dependencies:
 
@@ -52,6 +56,8 @@ In general, you must install these or else things may break & not work.
 `grim`, `slurp`, `swappy`, `hyprshot`, `wl-clipboard`, `mako`, `dconf`, `jq`, `socat`,
 
 </div>
+
+<br>
 
 ### 🡇 Download & Installation:
 
