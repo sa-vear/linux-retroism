@@ -2,8 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
-import Quickshell.Widgets
-
+import Quickshell.Wayland
 import ".."
 import "../utils" as Utils
 
@@ -11,26 +10,42 @@ import "../utils" as Utils
 *  This entire module is quite a mess, and is likely going to get a complete re-write.
 *  I'm experimenting with creating the entire window frame/designs with SVG in order to
 *  skip the need of creating everything out of rectangles and borders.
+*
 */
 PopupWindow {
     id: root
 
     property int menuWidth: 0
     property int popupWidth: 600
+    property int screenHeight: 0
     property var currentApps: []
     property var closeCallback: function () {}
 
+    // Once again, I must mention that these values are confusing but since I want to
+    // capture focus immediately when the app launcher is opened, without the user having
+    // to move their mouse cursor to it; the mess is necessary.
     anchor.window: taskbar
-    anchor.rect.x: menuWidth - popupWidth / 2
+    anchor.rect.x: Screen.width / 2 - menuWidth / 2
     anchor.rect.y: parentWindow.implicitHeight
-    implicitWidth: popupWidth
-    implicitHeight: 350
+    implicitWidth: taskbar.width
+    implicitHeight: screenHeight - parentWindow.implicitHeight - 4
     color: "transparent"
 
+    // This is quite hacky, the reason this exists is so the search bar gains immediate focus
+    // when you open the AppLauncher.
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            root.closeCallback();
+        }
+    }
     Rectangle {
         id: frame
         opacity: 0
-        anchors.fill: parent
+        //anchors.fill: parent
+        anchors.horizontalCenter: parent.horizontalCenter
+        implicitHeight: 350
+        implicitWidth: root.popupWidth
         color: Config.colors.base
         layer.enabled: true
 
@@ -60,8 +75,9 @@ PopupWindow {
                         border.color: Config.colors.outline
                         border.width: 1
                         clip: true
-                        TextInput {
+                        TextField {
                             id: searchInput
+                            width: parent.width
                             anchors.centerIn: parent
                             text: ""
                             font.pixelSize: 16
@@ -75,6 +91,23 @@ PopupWindow {
                             verticalAlignment: Text.AlignVCenter
                             focus: true
 
+                            background: Rectangle {
+                                color: "transparent"
+                            }
+
+                            Keys.onEscapePressed: {
+                                root.closeCallback();
+                            }
+
+                            Component.onCompleted: {
+                                searchInput.forceActiveFocus();
+                            }
+                            onAccepted: {
+                                if (root.currentApps.length == 1) {
+                                    root.currentApps[0].execute();
+                                    root.closeCallback();
+                                }
+                            }
                             onTextChanged: {
                                 root.currentApps = Utils.AppSearch.fuzzyQuery(searchInput.text);
                                 //console.log(Utils.AppSearch.fuzzyQuery(searchInput.text)[0].name);

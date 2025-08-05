@@ -120,6 +120,7 @@ Scope {
                     closeCallback: taskbar.closeAllPopups
                     menuWidth: taskbar.width / 2
                     popupWidth: 500
+                    screenHeight: modelData.height
                 }
                 function closeAllPopups() {
                     switch (root.currentPopup) {
