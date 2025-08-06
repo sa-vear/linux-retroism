@@ -97,6 +97,8 @@ future versions.
 - [ ] Higher res icon theme and more icons.
 - [ ] Proper settings menu, change font sizes, font, wallpapers, etc.
 - [ ] Refactor quickshell code where need be.
+- [ ] Better laptop support (battery indicator)
+- [ ] UI/UX Improvements
 
 ### ✦ License
 
