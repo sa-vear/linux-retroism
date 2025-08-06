@@ -94,7 +94,7 @@ PopupWindow {
                                         Text {
                                             font.family: fontMonaco.name
                                             font.pixelSize: 14
-                                            text: "NixOS Linux"
+                                            text: Config.settings.systemDetails.osName
                                             color: Config.colors.text
                                         }
                                     }
@@ -109,7 +109,7 @@ PopupWindow {
                                         Text {
                                             font.family: fontMonaco.name
                                             font.pixelSize: 14
-                                            text: "25.05"
+                                            text: Config.settings.systemDetails.osVersion
                                             color: Config.colors.text
                                         }
                                     }
@@ -124,7 +124,7 @@ PopupWindow {
                                         Text {
                                             font.family: fontMonaco.name
                                             font.pixelSize: 14
-                                            text: "32GB"
+                                            text: Config.settings.systemDetails.ram
                                             color: Config.colors.text
                                         }
                                     }
@@ -139,7 +139,7 @@ PopupWindow {
                                         Text {
                                             font.family: fontMonaco.name
                                             font.pixelSize: 14
-                                            text: "AMD Ryzen7 7700x"
+                                            text: Config.settings.systemDetails.cpu
                                             color: Config.colors.text
                                         }
                                     }
@@ -155,7 +155,7 @@ PopupWindow {
                                         Text {
                                             font.family: fontMonaco.name
                                             font.pixelSize: 14
-                                            text: "Nvidia RTX 4080"
+                                            text: Config.settings.systemDetails.gpu
                                             color: Config.colors.text
                                         }
                                     }

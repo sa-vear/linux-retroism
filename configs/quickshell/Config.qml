@@ -98,14 +98,14 @@ Singleton {
             property JsonObject settings: JsonObject {
                 property string version: "0.1"
                 property bool militaryTimeClockFormat: true
-                property string systemProfileImageSource: "/home/username/Pictures/profile_picture.png"
+                property string systemProfileImageSource: "/home/ira/Bilder/pfps/diinki_1.png"
                 property string currentTheme: "default"
                 property bool setWallpaperToThemeWallpaper: true
                 property JsonObject execCommands: JsonObject {
                     property string terminal: "kitty"
                     property string files: "nemo"
                 }
-                property JsonObject systemDetauls: JsonObject {
+                property JsonObject systemDetails: JsonObject {
                     property string osName: "kitty"
                     property string osVersion: "kitty"
                     property string ram: "kitty"

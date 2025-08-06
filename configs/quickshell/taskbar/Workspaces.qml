@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Hyprland
+import Quickshell.I3
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
@@ -12,15 +13,22 @@ RowLayout {
     anchors.left: parent.left
     anchors.verticalCenter: parent.verticalCenter
 
-    Repeater {
-        model: Hyprland.workspaces.values.filter(w => w.monitor.name == taskbar.screen.name)
+     property bool usingHyprland: Hyprland.workspaces.values.length == 0 ? false : true
+
+    // TODO: Improve this functionality
+    property var currentWorkspaces: usingHyprland ? Hyprland.workspaces.values.filter(w => w.monitor.name == taskbar.screen.name) : I3.workspaces.values.filter(w => w.monitor.name == taskbar.screen.name)
+
+
+    Repeater { 
+        model: parent.currentWorkspaces
+        //model: Hyprland.workspaces.values.filter(w => w.monitor.name == taskbar.screen.name)
         Button {
             id: control
             anchors.centerIn: parent.centerIn
             contentItem: Text {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                text: modelData.id
+                text: usingHyprland ? modelData.id : modelData.number
                 font.family: fontMonaco.name
                 width: 10
                 height: 10
@@ -28,7 +36,11 @@ RowLayout {
                 color: Config.colors.text
             }
             onPressed: event => {
-                Hyprland.dispatch(`workspace ` + modelData.id);
+                if(usingHyprland) {
+                    Hyprland.dispatch(`workspace ` + modelData.id);
+                }else {
+                  I3.dispatch(`workspace ` + modelData.number);
+                }
                 event.accepted = true;
             }
             NewBorder {
@@ -42,11 +54,23 @@ RowLayout {
                 zValue: -1
             }
 
+            // TODO: Improve this, it's very messy right now.
+            property int focusedWindowId: 0
             function getColor() {
+                if (usingHyprland == true) {
+                  focusedWindowId = Hyprland.focusedWorkspace.id;
+                }else {
+                  focusedWindowId = I3.focusedWorkspace.number;
+                }
+
                 if (modelData.urgent) {
                     return Config.colors.urgent;
-                } else if (modelData.id == Hyprland.focusedWorkspace.id || mouse.hovered) {
-                    return Config.colors.shadow;
+                } else {
+                    if ((usingHyprland && modelData.id == focusedWindowId) || mouse.hovered) {
+                         return Config.colors.shadow;
+                    }else if ((usingHyprland == false && modelData.number == focusedWindowId) || mouse.hovered) {
+                         return Config.colors.shadow;
+                    }
                 }
                 return Config.colors.base;
             }
