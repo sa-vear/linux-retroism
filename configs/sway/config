@@ -10,8 +10,8 @@ exec --no-startup-id sh -c ' eval $(gnome-keyring-daemon --login) eval $(gnome-k
 
 exec nm-applet
 
-# ------------- Monitors
-exec_always swaybg -i ~/Bilder/wallpapers/aug2025/copyleft.png
+# ------------- Wallpapers
+exec_always swaybg -i ~/pictures/wallpapers/name.png
 
 # Reload quickshell
 exec_always qs kill
