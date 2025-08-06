@@ -27,7 +27,7 @@
 
 <br>
 
-### Features 🛈
+### Features (v0.1) 🛈
 
 - Automatic installer (`install.sh` script) with backup support
 - Fully quickshell-based front-end (taskbar, app launcher, settings menu, etc)
@@ -79,6 +79,23 @@ want the latest changes at a higher risk.
 
 The script will take care of everything and will prompt you if you wish to create a backup of all
 existing config files that it would replace.
+
+<br>
+
+### ✦ Notes & TODO Lists
+
+I recommend using Hyprland, as there are some issues sway has with NVIDIA GPUs in my experience.
+I will attempt to add fixes to sway if any bugs occur.
+
+Both the Icon theme and GTK theme are very early, I will continue to edit and improve them in
+future versions.
+
+**v0.2 TODO List:**
+
+- [ ] Update GTK Theme to be less janky.
+- [ ] Higher res icon theme and more icons.
+- [ ] Proper settings menu, change font sizes, font, wallpapers, etc.
+- [ ] Refactor quickshell code where need be.
 
 ### ✦ License
 
