@@ -14,13 +14,20 @@
 
 <div align="center">
 
-▐▐ **Linux Retroism is a Linux-rice based on the 1980-1990's user-interface aesthetic** ▌▌
+▐ **Linux Retroism is a Linux-rice based on the 1980-1990's user-interface aesthetic** ▌
 
 </div>
 
-<br><br>
+![image](./screenshots/default.png)
 
-### 🛈 Features:
+| wallpaper by 96YOTTEA              | wallpaper: Metropolis             |
+| ---------------------------------- | --------------------------------- |
+| ![image](./screenshots/cherry.png) | ![image](./screenshots/yorha.png) |
+|                                    |                                   |
+
+<br>
+
+### Features 🛈
 
 - Automatic installer (`install.sh` script) with backup support
 - Fully quickshell-based front-end (taskbar, app launcher, settings menu, etc)
@@ -29,7 +36,7 @@
 
 <br>
 
-### ✓ Dependencies:
+### Dependencies ✓
 
 You can use either Hyprland or SwayFX, although I actively use & debug on hyprland. The install script
 will let you know if any dependencies are missing.
@@ -59,7 +66,7 @@ In general, you must install these or else things may break & not work.
 
 <br>
 
-### 🡇 Download & Installation:
+### Download & Installation 🡇
 
 <div style="border-left: 4px solid #c8bfa1ff; padding: 12px 4px 1px 2px; background-color: #0000003e; margin-bottom: 12px">
 
