@@ -38,7 +38,7 @@
 
 ### Dependencies ✓
 
-You can use either Hyprland or SwayFX, although I actively use & debug on hyprland. The install script
+You can use either Hyprland or SwayFX/Sway, although I actively use & debug on hyprland. The install script
 will let you know if any dependencies are missing.
 
 In general, you must install these or else things may break & not work.
@@ -46,7 +46,7 @@ In general, you must install these or else things may break & not work.
 <div style="border-left: 4px solid #c8bfa1ff; padding: 12px 100px 1px 12px; background-color: #0000003e; margin-bottom: 8px">
 <strong>Window Manager:</strong><br>
 
-`Hyprland` or `SwayFX` | `hyprpaper` or `swaybg`
+`Hyprland` or `SwayFX` or `SwayFX` | `hyprpaper` or `swaybg`
 
 </div>
 
@@ -72,6 +72,7 @@ In general, you must install these or else things may break & not work.
 
 - After you've installed or cloned the repo, simply run the included `install.sh` script.
 - To update, simply get a newer version, and run the `install.sh` script once more.
+- You can also manually move the config directories if you wish to manually install.
 </div>
 
 I recommend getting versions from the `releases` page, but you can also git clone the repo if you
