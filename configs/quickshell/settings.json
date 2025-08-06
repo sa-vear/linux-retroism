@@ -1,25 +1,25 @@
 {
-    "settings": {
-        "bar": {
-            "fontSize": 12,
-            "monochromeTrayIcons": true,
-            "trayIconSize": 16
-        },
-        "currentTheme": "default",
-        "execCommands": {
-            "files": "nemo",
-            "terminal": "kitty"
-        },
-        "militaryTimeClockFormat": true,
-        "setWallpaperToThemeWallpaper": true,
-        "systemDetails": {
-            "cpu": "AMD Ryzen7 7700x",
-            "gpu": "NVIDIA RTX 4080",
-            "osName": "NixOS",
-            "osVersion": "25.05",
-            "ram": "32GB"
-        },
-        "systemProfileImageSource": "/home/ira/Bilder/pfps/diinki_1.png",
-        "version": "0.1"
-    }
+  "settings": {
+    "bar": {
+      "fontSize": 12,
+      "monochromeTrayIcons": true,
+      "trayIconSize": 16
+    },
+    "currentTheme": "default",
+    "execCommands": {
+      "files": "nemo",
+      "terminal": "kitty"
+    },
+    "militaryTimeClockFormat": true,
+    "setWallpaperToThemeWallpaper": true,
+    "systemDetails": {
+      "cpu": "CPU Name",
+      "gpu": "GPU Name",
+      "osName": "Linux Distro",
+      "osVersion": "Distro Version",
+      "ram": "Ram"
+    },
+    "systemProfileImageSource": "/home/username/Pictures/system_profile_picture.png",
+    "version": "0.1"
+  }
 }

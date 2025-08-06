@@ -98,7 +98,7 @@ Singleton {
             property JsonObject settings: JsonObject {
                 property string version: "0.1"
                 property bool militaryTimeClockFormat: true
-                property string systemProfileImageSource: "/home/ira/Bilder/pfps/diinki_1.png"
+                property string systemProfileImageSource: "/home/username/Pictures/system_profile_picture.png"
                 property string currentTheme: "default"
                 property bool setWallpaperToThemeWallpaper: true
                 property JsonObject execCommands: JsonObject {
@@ -106,11 +106,11 @@ Singleton {
                     property string files: "nemo"
                 }
                 property JsonObject systemDetails: JsonObject {
-                    property string osName: "kitty"
-                    property string osVersion: "kitty"
-                    property string ram: "kitty"
-                    property string cpu: "kitty"
-                    property string gpu: "kitty"
+                    property string osName: "Linux Distro"
+                    property string osVersion: "Distro Version"
+                    property string ram: "Ram"
+                    property string cpu: "CPU Name"
+                    property string gpu: "GPU Name"
                 }
                 property JsonObject bar: JsonObject {
                     property int fontSize: 12
