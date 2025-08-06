@@ -71,6 +71,10 @@ In general, you must install these or else things may break & not work.
 <div style="border-left: 4px solid #c8bfa1ff; padding: 12px 4px 1px 2px; background-color: #0000003e; margin-bottom: 12px">
 
 - After you've installed or cloned the repo, simply run the included `install.sh` script.
+- Note that you must still manually move the GTK theme and Icon
+  theme to `~/.local/share/icons` and `~/.local/share/themes`
+  respectively. You can set them to be active with the nwg-look
+  GUI.
 - To update, simply get a newer version, and run the `install.sh` script once more.
 - You can also manually move the config directories if you wish to manually install.
 </div>
