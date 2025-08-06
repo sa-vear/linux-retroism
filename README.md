@@ -78,7 +78,7 @@ In general, you must install these or else things may break & not work.
 I recommend getting versions from the `releases` page, but you can also git clone the repo if you
 want the latest changes at a higher risk.
 
-The script will take care of everything and will prompt you if you wish to create a backup of all
+The script will take care of everything and will create a backups of all
 existing config files that it would replace.
 
 <br>
