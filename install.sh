@@ -29,11 +29,11 @@ read -p "Enter (1 or 2):" option
 
 case $option in 
     1)
-        DEPS=("hyprpaper" "nemo" "kitty" "nwg-look" "quickshell" "hyprshot", "wl-clipboard", "mako", "dconf", "jq", "socat")
+        DEPS=("hyprpaper" "nemo" "kitty" "nwg-look" "quickshell" "hyprshot" "mako" "dconf" "jq" "socat")
         WINDOW_MANAGER="Hyprland"
         ;;
     2)
-        DEPS=("swaybg" "nemo" "kitty" "nwg-look" "quickshell" "grim", "slurp", "swappy", "wl-clipboard", "mako", "dconf", "jq", "socat")
+        DEPS=("swaybg" "nemo" "kitty" "nwg-look" "quickshell" "grim" "slurp" "swappy" "mako" "dconf" "jq" "socat")
         WINDOW_MANAGER="Sway"
         ;;
     *)
@@ -50,11 +50,11 @@ missing_deps=()
 
 # Best way to do this? Unsure if this has high compat
 for dep in "${DEPS[@]}"; do
-    if ! command -v "$dep" &> /dev/null; then
+    if command -v "$dep" >/dev/null 2>&1 ; then
+        print_txt "✓ $dep - Found." "$GREEN"
+    else
         missing_deps+=("$dep")
         print_txt "✗ $dep - Not Found!" "$RED"
-    else
-        print_txt "✓ $dep - Found" "$GREEN"
     fi
 done
 
@@ -78,9 +78,6 @@ if [ ! -d "$RICE_CONFIGS" ]; then
     exit 1
 fi
 
-# Create .config directory if it doesn't exist
-mkdir -p "$CONFIG_DIR"
-
 # Create backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
 
@@ -88,7 +85,7 @@ echo
 print_txt "Copying configs for programs..." "$YELLOW"
 
 # A bit messy, here we copy all config dirs and also detect if we need to create a backup of something.
-for dir in "$LOCAL_CONFIGS"/*/ ; do
+for dir in "$RICE_CONFIGS"/*/ ; do
     if [ -d "$dir" ]; then
         dirname=$(basename "$dir")
         target_dir="$CONFIG_DIR/$dirname"
@@ -115,7 +112,6 @@ for dir in "$LOCAL_CONFIGS"/*/ ; do
 done
 
 echo
-print_txt "Successfully installed Retroism!" "$GREEN"
 print_txt "All configurations have been installed to ~/.config/" "$GREEN"
 
 if [ "$(ls -A $BACKUP_DIR 2>/dev/null)" ]; then
@@ -123,4 +119,8 @@ if [ "$(ls -A $BACKUP_DIR 2>/dev/null)" ]; then
 fi
 
 echo
-print_txt "It's recommended to restart your computer, to ensure all changes take effect." "$YELLOW"
+print_txt "_____________________________________________________________________________" "$NC"
+echo
+print_txt "Successfully installed Retroism!" "$GREEN"
+print_txt "It's recommended to restart your computer, to ensure all changes take effect." "$NC"
+print_txt "_____________________________________________________________________________" "$NC"
